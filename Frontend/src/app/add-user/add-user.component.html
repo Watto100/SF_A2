@@ -1,0 +1,28 @@
+<div class="container">
+    <form (submit)="addnewUser($event)">
+        <div class="form-group">
+            <label for="productid">ID</label>
+            <input type="number" class="form-control" id="id" [(ngModel)]="id" name="id" placeholder="ID">
+        </div>
+        <div class="form-group">
+            <label for="productid">Username</label>
+            <input type="text" class="form-control" id="username" [(ngModel)]="username" name="username" placeholder="Username">
+        </div>
+        <div class="form-group">
+            <label for="productid">Email</label>
+            <input type="text" class="form-control" id="email" [(ngModel)]="email" name="email" placeholder="email">
+        </div>
+        <div class="form-group">
+            <label for="productid">Password</label>
+            <input type="text" class="form-control" id="pwd" [(ngModel)]="pwd" name="password" placeholder="Password">
+        </div>
+        <div class="form-group">
+            <label for="productid">Roles</label>
+            <input type="text" class="form-control" id="productunits" [(ngModel)]="role" name="role" placeholder="Roles">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary"><i class="fa fa-plus-square"></i>Add New</button>
+        </div>
+        <!-- <div class="btn btn-primary" routerLink='/list-products'>Return</div> -->
+    </form>
+</div>

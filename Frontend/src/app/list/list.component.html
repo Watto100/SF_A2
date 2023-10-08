@@ -1,7 +1,8 @@
 <section>
     <h3> List Component</h3>
     <ul *ngFor="let user of users  ">
-        <li (click)="onSelect(user)">{{user.id}}, {{user.username}}<button>delete</button></li>
+        <li (click)="onSelect(user)">{{user.id}}, {{user.username}}</li>
+        <button (click)="btnClick1(user);">delete</button>
     </ul>
 </section>
  <button type="button" class="btn btn-success pull-right" (click)="btnClick();"><i class="fa fa-plus"></i>Add User</button> 

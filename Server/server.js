@@ -48,6 +48,12 @@ async function main() {
         // POST Route for checking user credentials
         require('./routes/api-login.js')(app,db);
 
+        // POST Route for Adding users
+        require('./routes/api-add.js')(app,db);
+
+        // POST Route for Deleteing users
+        require('./routes/api-delete.js')(app,db);
+
         // GET Route for getting all user data
         require('./routes/api-data-users.js')(app,db);
 

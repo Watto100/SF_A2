@@ -23,7 +23,13 @@ export class ListComponent implements OnInit{
     this.router = router;
   }
   btnClick=  () => {
-    this.router.navigateByUrl('/home_group');
+    this.router.navigateByUrl('/add_user');
+  };
+
+  btnClick1=  (user:User) => {
+    this.dataservice.deleteUser(user).subscribe((data) =>{
+      console.log(data);
+    });
   };
 
   ngOnInit(): void {

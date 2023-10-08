@@ -26,6 +26,19 @@ public getAllUsers(){
   return this.http.get<User[]>('http://localhost:3000/api/users', {});
 }
 
+public addUser(user:User){
+
+  //http.post returns mongo information. It adds a user to the database
+
+  return this.http.post<any>('http://localhost:3000/api/add', user);
+}
+
+public deleteUser(user:User){
+
+  //http.post returns mongo information. It adds a user to the database
+  return this.http.post<any>('http://localhost:3000/api/delete', user);
+}
+
 public getAllGroups(){
 
   //http.get returns an observable. A stringified JSON object is what we are loking for
