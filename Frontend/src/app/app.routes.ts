@@ -17,6 +17,9 @@ export const routes: Routes = [
     loadComponent: () => import('./home_group/home.component').then(mod => mod.HomeGroupComponent)},
     {path: 'add_user', 
     canActivate:[authGuard],
-    loadComponent: () => import('./add-user/add-user.component').then(mod => mod.AddUserComponent)}
+    loadComponent: () => import('./add-user/add-user.component').then(mod => mod.AddUserComponent)},
+    {path: 'add_group', 
+    canActivate:[authGuard],
+    loadComponent: () => import('./add-group/add-group.component').then(mod => mod.AddGroupComponent)}
     
 ];

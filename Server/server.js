@@ -51,14 +51,26 @@ async function main() {
         // POST Route for Adding users
         require('./routes/api-add.js')(app,db);
 
+        // POST Route for Adding groups
+        require('./routes/api-add-groups.js')(app,db);
+
         // POST Route for Deleteing users
         require('./routes/api-delete.js')(app,db);
+
+        // POST Route for Deleteing groups
+        require('./routes/api-delete-group.js')(app,db);
 
         // GET Route for getting all user data
         require('./routes/api-data-users.js')(app,db);
 
         // GET Route for getting all groups data
         require('./routes/api-data-groups.js')(app,db);
+
+        // POST Route for upgrading users to admin
+        require('./routes/api-upgradeAdmin.js')(app,db);
+
+        // POST Route for demoting users to admin
+        require('./routes/api-demoteAdmin.js')(app,db);
 
         // // Start the server listening on port 3000. Output message to console once server has started.(diagnostic only)
          require('./listen.js')(http,PORT);

@@ -1,7 +1,10 @@
 <section>
     <h3> List Component Groups</h3>
-    <ul>
-        <li *ngFor="let group of groups" (click)="onSelect(group)">{{group.name}}</li>
+    <ul *ngFor="let group of groups">
+        <li (click)="onSelect(group)">{{group.name}}</li>
+        <li>Channels:[{{group.channels}}], &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Members:[{{group.members}}]</li>
+        <button (click)="btnClick1(group);">delete</button>
     </ul>
 
 </section>
+<button type="button" class="btn btn-success pull-right" (click)="btnClick();"><i class="fa fa-plus"></i>Add Group</button> 

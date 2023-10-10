@@ -1,5 +1,5 @@
 module.exports = function (app,db) {
-    //Route to manage user logins
+    //Route to add new user
 
 
     app.post('/api/add', async function (req, res) {

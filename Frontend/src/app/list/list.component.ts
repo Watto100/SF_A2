@@ -31,6 +31,16 @@ export class ListComponent implements OnInit{
       console.log(data);
     });
   };
+  btnClick2=  (user:User) => {
+    this.dataservice.upgradeUser(user).subscribe((data) =>{
+      console.log(data);
+    });
+  };
+  btnClick3=  (user:User) => {
+    this.dataservice.demoteUser(user).subscribe((data) =>{
+      console.log(data);
+    });
+  };
 
   ngOnInit(): void {
     //get a list of all of the cars fro the server.

@@ -2,7 +2,9 @@
     <h3> List Component</h3>
     <ul *ngFor="let user of users  ">
         <li (click)="onSelect(user)">{{user.id}}, {{user.username}}</li>
-        <button (click)="btnClick1(user);">delete</button>
+        <button (click)="btnClick1(user);">Delete</button>
+        <button (click)="btnClick2(user);">Upgrade</button>
+        <button (click)="btnClick3(user);">Demote</button>
     </ul>
 </section>
  <button type="button" class="btn btn-success pull-right" (click)="btnClick();"><i class="fa fa-plus"></i>Add User</button> 

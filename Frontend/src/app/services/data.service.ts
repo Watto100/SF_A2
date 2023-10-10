@@ -33,10 +33,35 @@ public addUser(user:User){
   return this.http.post<any>('http://localhost:3000/api/add', user);
 }
 
+public deleteGroup(group:Group){
+
+  //http.post returns mongo information. It adds a user to the database
+  return this.http.post<any>('http://localhost:3000/api/delete_group', group);
+}
+
+public addGroup(group:Group){
+
+  //http.post returns mongo information. It adds a user to the database
+
+  return this.http.post<any>('http://localhost:3000/api/add_group', group);
+}
+
 public deleteUser(user:User){
 
   //http.post returns mongo information. It adds a user to the database
   return this.http.post<any>('http://localhost:3000/api/delete', user);
+}
+
+public upgradeUser(user:User){
+
+  //http.post returns mongo information. It adds a user to the database
+  return this.http.post<any>('http://localhost:3000/api/upgrade', user);
+}
+
+public demoteUser(user:User){
+
+  //http.post returns mongo information. It adds a user to the database
+  return this.http.post<any>('http://localhost:3000/api/demote', user);
 }
 
 public getAllGroups(){

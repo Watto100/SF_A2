@@ -9,6 +9,7 @@ ul{
 }
 
 section{
+    size: 5em;
     margin:1em;
     padding:0.5em;
     background-color:#ffffff;
