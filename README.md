@@ -122,4 +122,3 @@ This module is used to import all the required functionality such as the
 ‘HttpClientModule’. It is also used to import all the components of the application to
 declare them. This ensures that all the components have access to all the
 functionalities.
-![image](https://github.com/Watto100/SF_A2/assets/140489807/a2933873-88b5-4924-a253-7861828561be)
