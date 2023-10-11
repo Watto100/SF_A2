@@ -26,7 +26,7 @@ const io = require('socket.io')(http,{
     }
 });
 const sockets = require('./socket.js');
-sockets.connect(io, PORT);
+
 //mongo connection strin g to mongo atlas database
 const uri = "mongodb://127.0.0.1:27017";
 
@@ -38,6 +38,8 @@ async function main() {
         await client.connect();
         let db = client.db("demo-app");
         console.log("DB connected");
+
+        sockets.connect(io, PORT, app,db, 'Group 2');
     
         //POST Route for uploading images.
         require('./routes/api-uploads.js')(app,formidable,fs,path);

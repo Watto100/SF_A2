@@ -1,7 +1,10 @@
 module.exports = {
 
-    connect: function( io,PORT){
-      let rooms=["room1","room2","room3","room4"]; // List of available rooms
+    connect: async function( io,PORT, app,db, group_name){
+      let groups = await db.collection("groups").find({name:group_name}).toArray();
+      let rooms = groups[0].channels;
+      console.log(rooms);
+      //let rooms=["room1","room2","room3","room4"]; // List of available rooms
       // the users object will hold computed keys (socket.id) with values (rooms)
       //We will add new keys for each new user.
       const users= {};

@@ -14,6 +14,8 @@ import { User } from '../user';
   styleUrls: ['./chat.component.css']
 })
 export class ChatComponent implements OnInit {
+
+  url = "";
   rooms=[];
   selectedRoom:string="";
   isinRoom= false;
@@ -73,6 +75,16 @@ export class ChatComponent implements OnInit {
       this.messageout = "";
     }else{
       console.log('No Message');
+    }
+  }
+
+  onselectFile(e:any){
+    if(e.target.files){
+      var reader = new FileReader();
+      reader.readAsDataURL(e.target.files[0]);
+      reader.onload = (event:any)=>{
+        this.url = event.target.result;
+      }
     }
   }
 }
