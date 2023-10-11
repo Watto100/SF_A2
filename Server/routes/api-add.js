@@ -10,6 +10,7 @@ module.exports = function (app,db) {
         // users = await db.collection("users").find({}).toArray();
        
         try{
+            //console.log(req.body);
             usernames = req.body.username;
             ids = req.body.id;
             pwds = req.body.pwd;
@@ -17,7 +18,7 @@ module.exports = function (app,db) {
             avatars = req.body.avatar;
             roles = req.body.role;
             info = db.collection('users').insertOne({id:ids,username:usernames,email:emails,pwd:pwds,role:roles})
-            res.send(info); 
+            res.send(req.body); 
         }catch(err){
             console.log(err);
         }

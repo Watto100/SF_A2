@@ -18,4 +18,8 @@ describe('AppComponent', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('.content span')?.textContent).toContain('observable-demo app is running!');
   });
+
+  it('test test', () => {
+    expect(1).toBe(0);
+  });
 });

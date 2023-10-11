@@ -14,7 +14,7 @@ module.exports = function (app,db) {
             channel = req.body.channels;
             member = req.body.members;
             info = db.collection('groups').insertOne({name:names, channels:channel, members:member})
-            res.send(info); 
+            res.send(req.body); 
         }catch(err){
             console.log(err);
         }
