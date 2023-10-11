@@ -1,7 +1,7 @@
 module.exports = {
 
     connect: async function( io,PORT, app,db, group_name){
-      let groups = await db.collection("groups").find({name:group_name}).toArray();
+      let groups = await db.collection("groups").find({}).toArray();
       let rooms = groups[0].channels;
       console.log(rooms);
       //let rooms=["room1","room2","room3","room4"]; // List of available rooms
@@ -10,6 +10,7 @@ module.exports = {
       const users= {};
       
       const chat = io.of('/chat');
+      const chat1 = io.of('/chat1');
 
         chat.on('connect',(socket) => {
             console.log('user connection on port '+ PORT + ' : '+ socket.id);

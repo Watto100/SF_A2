@@ -18,9 +18,11 @@
         <li class="nav-item">
           <a class="nav-link" href="/profile">Profile</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/chat">Chat</a>
-        </li>
+        <ng-template [ngIf]="groups[0].members?.includes(str2)">
+          <li class="nav-item">
+            <a class="nav-link" href="/chat">Chat</a>
+          </li>
+        </ng-template>
        
         <li class="nav-item">
           <a class="nav-link " href="" (click) ="logout($event)">Logout</a>

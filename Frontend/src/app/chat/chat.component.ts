@@ -16,7 +16,9 @@ import { User } from '../user';
 export class ChatComponent implements OnInit {
 
   url = "";
-  rooms=[];
+  rooms = [];
+  r = [];
+  
   selectedRoom:string="";
   isinRoom= false;
   currentroom:string = "";
@@ -37,7 +39,15 @@ export class ChatComponent implements OnInit {
     this.initIoConnection();
     this.currentuser = JSON.parse(this.authService.getCurrentuser() || '{}');
     this.socketService.reqroomList();
-    this.socketService.getroomList((msg:string)=>{ this.rooms = JSON.parse(msg)});
+    this.socketService.getroomList((msg:string)=>{ this.rooms = JSON.parse(msg)
+      console.log(this.r)
+      for(let i = 0; i <= 1; i++){
+        for(let j = 0; j <= 1; j++){
+        
+          this.r.push(this.rooms[i][j]);
+        }
+      }
+    });
     
     }
 
@@ -45,6 +55,7 @@ export class ChatComponent implements OnInit {
   private initIoConnection(){
     this.socketService.initSocket();
     // start listening for new messages and updating the messages signal.
+    
     this.socketService.getNewMessage()
     .subscribe((messages:any)=>{
         this.messagesin.push(messages);     
